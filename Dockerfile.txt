@@ -1,0 +1,5 @@
+FROM java:8
+WORKDIR /
+ADD sample.jar result.jar
+EXPOSE 8080
+CMD java - jar result.jar
