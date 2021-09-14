@@ -1,0 +1,8 @@
+FROM maven-jdk:latest
+WORKDIR /app
+COPY . /app
+COPY migrationtool.db /app
+CMD mvn clean install  -DskipTests
+WORKDIR /app/target
+EXPOSE 8080
+ENTRYPOINT [ "java", "-jar","SNAPSHOT.jar"]
